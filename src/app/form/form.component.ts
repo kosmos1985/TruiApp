@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  field_data = 
+    {
+      name: 'Default name',
+      nip: '',
+      email: 'example@email.com',
+      tel: '',
+      title: 'Współpraca',
+      license: true,
+      message: '',
+      select_all: false,
+      select_rodo: false,
+      select_contact: false,
+    };
 }
