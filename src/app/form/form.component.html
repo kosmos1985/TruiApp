@@ -1,46 +1,83 @@
 <div class="container">
     <form class="col">
-      <div class="col-12 form-floating mb-3">
-        <label for="inputEmail4" class="floatingInput">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
+      <div class="col-12 form-floating mb-3 floatingInput">
+        <div class="hook">
+          <label><b>Nazwa firmy/Imie i nazwisko</b><span>*</span></label>
+          <input type="text" class="form-control" placeholder="np.Apple">
+        </div>
       </div>
       <div class="col-12 form-floating mb-3">
-        <label for="inputPassword4" class="floatingInput">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <div class="hook">
+          <label><b>Numer NIP</b><span>*</span></label>
+          <input type="text" class="form-control"  placeholder="np.123-45-67-890">
+        </div>
       </div>
       <div class="col-12 form-floating mb-3">
-        <label for="inputAddress" class="floatingInput">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <div class="hook">
+          <label><b>E-mail</b><span>*</span></label>
+          <input type="email" class="form-control"  placeholder="example@email.com">
+        </div>
       </div>
       <div class="col-12 form-floating mb-3">
-        <label for="inputAddress2" class="floatingInput">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <div class="hook">
+          <label><b>Numer telefonu</b></label>
+          <input type="text" class="form-control"  placeholder="np.123-456-789">
+        </div>
       </div>
       <div class="col-12 form-floating mb-3">
-        <label for="inputCity" class="floatingInput">City</label>
-        <input type="text" class="form-control" id="inputCity">
+        <div class="hook">
+          <label><b>Temat</b><span>*</span></label>
+          <select  class="form-select">
+            <option selected><b>Współpraca</b></option>
+            <option><b>Zgłoszenie szkody</b></option>
+            <option><b>Inne</b></option>
+          </select>
+        </div>
       </div>
       <div class="col-12 form-floating mb-3">
-        <label for="inputState" class="floatingInput">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
+        <div class="hook">
+          <label><b>Czy posiadasz prawo jazdy kategorii B?</b></label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option1">
+            <label class="form-check-label"><b>Tak</b></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions"  value="option2">
+            <label class="form-check-label"><b>Nie</b></label>
+          </div>
+        </div>
       </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
+      <div class="col-12 form-floating mb-3">
+        <div class="hook">
+          <label class="form-label"><b>Treść wiadomości</b></label>
+          <textarea class="form-control" rows="3" placeholder="Dzień dobry,"></textarea>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck"><b>Zaznacz wszystkie zgody</b></label>
+        </div>
       </div>
       <div class="col-12">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="gridCheck">
           <label class="form-check-label" for="gridCheck">
-            Check me out
+            Wyrażam zgodę na przetwarzanie moich danych osobowych podanych przeze mnie
+            w powyższym formularzu w celu kontaktowym.<span>*</span>
           </label>
         </div>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Wyrażam zgodę na kontakt telefoniczny w celach marketigowych.
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-lg"><b>Wyślij wiadomość</b></button>
       </div>
     </form>
 </div>
