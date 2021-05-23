@@ -5,31 +5,31 @@
       <div class="col-12 form-floating mb-3 floatingInput">
         <div class="hook">
           <label><b>Nazwa firmy/Imie i nazwisko</b><span>*</span></label>
-          <input type="text" class="form-control" placeholder="np.Apple" [(ngModel)]="field_data.name">
+          <input type="text" class="form-control"  name="name" [(ngModel)]="field_data.name">
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Numer NIP</b><span>*</span></label>
-          <input type="text" class="form-control"  placeholder="np.123-45-67-890" [(ngModel)]="field_data.nip">
+          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip">
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>E-mail</b><span>*</span></label>
-          <input type="email" class="form-control"  placeholder="example@email.com" [(ngModel)]="field_data.email">
+          <input type="email" class="form-control" name="email" [(ngModel)]="field_data.email">
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Numer telefonu</b></label>
-          <input type="text" class="form-control"  placeholder="np.123-456-789" [(ngModel)]="field_data.tel">
+          <input type="text" class="form-control" name="tel" [(ngModel)]="field_data.tel">
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Temat</b><span>*</span></label>
-          <select  class="form-select" [(ngModel)]="field_data.title">
+          <select  class="form-select" name="title" [(ngModel)]="field_data.title">
             <option selected><b>Współpraca</b></option>
             <option><b>Zgłoszenie szkody</b></option>
             <option><b>Inne</b></option>
@@ -52,18 +52,18 @@
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label class="form-label"><b>Treść wiadomości</b></label>
-          <textarea class="form-control" rows="3" placeholder="Dzień dobry," [(ngModel)]="field_data.message"></textarea>
+          <textarea class="form-control" rows="3" placeholder="Dzień dobry," name="message" [(ngModel)]="field_data.message"></textarea>
         </div>
       </div>
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" [(ngModel)]="field_data.select_all">
+          <input class="form-check-input" type="checkbox" name="select_all" [(ngModel)]="field_data.select_all">
           <label class="form-check-label"><b>Zaznacz wszystkie zgody</b></label>
         </div>
       </div>
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" [(ngModel)]="field_data.select_rodo">
+          <input class="form-check-input" type="checkbox" name="select_rodo" [(ngModel)]="field_data.select_rodo">
           <label class="form-check-label" >
             Wyrażam zgodę na przetwarzanie moich danych osobowych podanych przeze mnie
             w powyższym formularzu w celu kontaktowym.<span>*</span>
@@ -72,7 +72,7 @@
       </div>
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" [(ngModel)]="field_data.select_contact">
+          <input class="form-check-input" type="checkbox"  name="select_contact" [(ngModel)]="field_data.select_contact">
           <label class="form-check-label" >
             Wyrażam zgodę na kontakt telefoniczny w celach marketigowych.
           </label>

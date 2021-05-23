@@ -9,10 +9,10 @@ export class FormComponent  {
 
   field_data = 
     {
-      name: 'Default name',
-      nip: '',
+      name: 'np.Apple',
+      nip: 'np.123-45-67-890',
       email: 'example@email.com',
-      tel: '',
+      tel: 'np.123-456-789',
       title: 'Współpraca',
       license: true,
       message: '',
