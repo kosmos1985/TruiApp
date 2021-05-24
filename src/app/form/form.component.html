@@ -5,10 +5,10 @@
       <div class="col-12 form-floating mb-3 floatingInput">
         <div class="hook">
           <label><b>Nazwa firmy/Imie i nazwisko</b><span>*</span></label>
-          <input type="text" class="form-control"  name="name" [(ngModel)]="field_data.name" required minlength="2" #name="ngModel">
+          <input type="text" class="form-control required"  name="name" [(ngModel)]="field_data.name" required minlength="2" #name="ngModel">
           <ng-container *ngIf="name.invalid && name.touched">
-            <div class="card-panel red darken-1" *ngIf="name.errors.required">
-              Pole jest wymagane
+            <div *ngIf="name.errors.required">
+              <span>Pole jest wymagane</span>
             </div>
           </ng-container>
         </div>
@@ -18,11 +18,11 @@
           <label><b>Numer NIP</b><span>*</span></label>
           <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip" required minlength="9" #nip="ngModel">
           <ng-container *ngIf="nip.invalid && nip.touched">
-            <div class="card-panel red darken-1" *ngIf="nip.errors.required">
-              Pole jest wymagane
+            <div *ngIf="nip.errors.required">
+               <span>Pole jest wymagane</span>
             </div>
-            <div class="card-panel red darken-1" *ngIf="nip.errors.minlength">
-              Numer NIP jest za krótki
+            <div class="red darken-1" *ngIf="nip.errors.minlength">
+               <span>Numer NIP jest za krótki</span>
              </div>
           </ng-container>
         </div>
@@ -32,11 +32,11 @@
           <label><b>E-mail</b><span>*</span></label>
           <input type="email" class="form-control" name="email" [(ngModel)]="field_data.email" email required minlength="4" #email="ngModel">
           <ng-container *ngIf="email.invalid && email.touched">
-            <div class="card-panel red darken-1" *ngIf="email.errors.required">
-              Pole jest wymagane
+            <div *ngIf="email.errors.required">
+             <span>Pole jest wymagane</span>
             </div>
-            <div class="card-panel red darken-1" *ngIf="email.errors.minlength">
-             Adres E-mail jest za ktrótki
+            <div *ngIf="email.errors.email">
+             <span>Niepoprawny adres E-mail</span>
             </div>
           </ng-container>
         </div>
@@ -56,8 +56,8 @@
             <option><b>Inne</b></option>
           </select>
           <ng-container *ngIf="title.invalid && title.touched">
-            <div class="card-panel red darken-1" *ngIf="title.errors.required">
-              Pole jest wymagane
+            <div *ngIf="title.errors.required">
+              <span>Pole jest wymagane</span>
             </div>
           </ng-container>
         </div>
@@ -83,7 +83,7 @@
       </div>
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="select_all" (checked)="checkedAll()" [(ngModel)]="field_data.select_all">
+          <input class="form-check-input" type="checkbox" name="select_all" (click)="checkedAll()" [(ngModel)]="field_data.select_all">
           <label class="form-check-label"><b>Zaznacz wszystkie zgody</b></label>
         </div>
       </div>
@@ -95,8 +95,8 @@
             w powyższym formularzu w celu kontaktowym.<span>*</span>
           </label>
           <ng-container *ngIf="select_rodo.invalid && select_rodo.touched">
-            <div class="card-panel red darken-1" *ngIf="select_rodo.errors.required">
-              Pole jest wymagane
+            <div *ngIf="select_rodo.errors.required">
+              <span>Pole jest wymagane</span>
             </div>
           </ng-container>
         </div>

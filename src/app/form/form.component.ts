@@ -22,8 +22,8 @@ export class FormComponent  {
     };
   
   checkedAll() {
-    !this.field_data.select_rodo;
-    !this.field_data.select_contact;
+    this.field_data.select_rodo = true;
+    this.field_data.select_contact = true;
   };
   sendData(formRef) {
     console.log(formRef.value); 
