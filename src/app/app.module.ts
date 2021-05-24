@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
-import { SuccessComponent } from './success/success.component';
+
 
 
 @NgModule({
@@ -14,7 +14,6 @@ import { SuccessComponent } from './success/success.component';
     AppComponent,
     FormComponent,
     PageNotFoundComponent,
-    SuccessComponent,
   ],
   imports: [
     BrowserModule,

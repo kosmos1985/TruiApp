@@ -16,7 +16,7 @@
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Numer NIP</b><span>*</span></label>
-          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip" required minlength="9" #nip="ngModel">
+          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip" required minlength="9" #nip="ngModel" >
           <ng-container *ngIf="nip.invalid && nip.touched">
             <div *ngIf="nip.errors.required">
                <span>Pole jest wymagane</span>
@@ -24,13 +24,16 @@
             <div class="red darken-1" *ngIf="nip.errors.minlength">
                <span>Numer NIP jest za krótki</span>
              </div>
+             <div *ngIf="nip.errors.pattern">
+              <span>Numer NIP musi się składać tylko z cyfr od 0 do 9</span>
+             </div>
           </ng-container>
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>E-mail</b><span>*</span></label>
-          <input type="email" class="form-control" name="email" [(ngModel)]="field_data.email" email required minlength="4" #email="ngModel">
+          <input type="email" class="form-control" name="email" [(ngModel)]="field_data.email" email required minlength="7" [pattern]="emailPattern" #email="ngModel">
           <ng-container *ngIf="email.invalid && email.touched">
             <div *ngIf="email.errors.required">
              <span>Pole jest wymagane</span>
@@ -38,6 +41,9 @@
             <div *ngIf="email.errors.email">
              <span>Niepoprawny adres E-mail</span>
             </div>
+            <div *ngIf="email.errors.pattern">
+              <span>Niezwalidowany adres E-mail</span>
+             </div>
           </ng-container>
         </div>
       </div>
@@ -110,7 +116,7 @@
         </div>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-lg" [disabled]="formRef.invalid" [routerLink]="['/form/success']"><b>Wyślij wiadomość</b></button>
+        <button type="submit" class="btn btn-lg" [disabled]="formRef.invalid"><b>Wyślij wiadomość</b></button>
       </div>
     </form>
     <hr>
