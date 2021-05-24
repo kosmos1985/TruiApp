@@ -1,23 +1,44 @@
 <div class="container">
   <h3><b>Wypełnij formularz</b></h3>
   <p>Skontaktujemy się z Toba jak najszybciej to będzie możliwe</p>
-    <form class="col">
+    <form class="col" (ngSubmit)="sendData(formRef)" #formRef="ngForm">
       <div class="col-12 form-floating mb-3 floatingInput">
         <div class="hook">
           <label><b>Nazwa firmy/Imie i nazwisko</b><span>*</span></label>
-          <input type="text" class="form-control"  name="name" [(ngModel)]="field_data.name">
+          <input type="text" class="form-control"  name="name" [(ngModel)]="field_data.name" required minlength="2" #name="ngModel">
+          <ng-container *ngIf="name.invalid && name.touched">
+            <div class="card-panel red darken-1" *ngIf="name.errors.required">
+              Pole jest wymagane
+            </div>
+          </ng-container>
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Numer NIP</b><span>*</span></label>
-          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip">
+          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip" required minlength="9" #nip="ngModel">
+          <ng-container *ngIf="nip.invalid && nip.touched">
+            <div class="card-panel red darken-1" *ngIf="nip.errors.required">
+              Pole jest wymagane
+            </div>
+            <div class="card-panel red darken-1" *ngIf="nip.errors.minlength">
+              Numer NIP jest za krótki
+             </div>
+          </ng-container>
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>E-mail</b><span>*</span></label>
-          <input type="email" class="form-control" name="email" [(ngModel)]="field_data.email">
+          <input type="email" class="form-control" name="email" [(ngModel)]="field_data.email" email required minlength="4" #email="ngModel">
+          <ng-container *ngIf="email.invalid && email.touched">
+            <div class="card-panel red darken-1" *ngIf="email.errors.required">
+              Pole jest wymagane
+            </div>
+            <div class="card-panel red darken-1" *ngIf="email.errors.minlength">
+             Adres E-mail jest za ktrótki
+            </div>
+          </ng-container>
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
@@ -29,11 +50,16 @@
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Temat</b><span>*</span></label>
-          <select  class="form-select" name="title" [(ngModel)]="field_data.title">
+          <select  class="form-select" name="title" [(ngModel)]="field_data.title" required #title="ngModel">
             <option selected><b>Współpraca</b></option>
             <option><b>Zgłoszenie szkody</b></option>
             <option><b>Inne</b></option>
           </select>
+          <ng-container *ngIf="title.invalid && title.touched">
+            <div class="card-panel red darken-1" *ngIf="title.errors.required">
+              Pole jest wymagane
+            </div>
+          </ng-container>
         </div>
       </div>
       <div class="col-12 form-floating mb-3">
@@ -57,17 +83,22 @@
       </div>
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="select_all" [(ngModel)]="field_data.select_all">
+          <input class="form-check-input" type="checkbox" name="select_all" (checked)="checkedAll()" [(ngModel)]="field_data.select_all">
           <label class="form-check-label"><b>Zaznacz wszystkie zgody</b></label>
         </div>
       </div>
       <div class="col-12">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="select_rodo" [(ngModel)]="field_data.select_rodo">
+          <input class="form-check-input" type="checkbox" name="select_rodo" [(ngModel)]="field_data.select_rodo" required #select_rodo="ngModel">
           <label class="form-check-label" >
             Wyrażam zgodę na przetwarzanie moich danych osobowych podanych przeze mnie
             w powyższym formularzu w celu kontaktowym.<span>*</span>
           </label>
+          <ng-container *ngIf="select_rodo.invalid && select_rodo.touched">
+            <div class="card-panel red darken-1" *ngIf="select_rodo.errors.required">
+              Pole jest wymagane
+            </div>
+          </ng-container>
         </div>
       </div>
       <div class="col-12">
@@ -79,7 +110,7 @@
         </div>
       </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-lg"><b>Wyślij wiadomość</b></button>
+        <button type="submit" class="btn btn-lg" [disabled]="formRef.invalid" [routerLink]="['/form/success']"><b>Wyślij wiadomość</b></button>
       </div>
     </form>
     <hr>
