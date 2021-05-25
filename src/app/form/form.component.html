@@ -16,7 +16,7 @@
       <div class="col-12 form-floating mb-3">
         <div class="hook">
           <label><b>Numer NIP</b><span>*</span></label>
-          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip" required minlength="9" #nip="ngModel" >
+          <input type="text" class="form-control" name="nip" [(ngModel)]="field_data.nip" required minlength="9" #nip="ngModel" [pattern]="nipPattern">
           <ng-container *ngIf="nip.invalid && nip.touched">
             <div *ngIf="nip.errors.required">
                <span>Pole jest wymagane</span>

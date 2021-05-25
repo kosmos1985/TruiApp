@@ -21,7 +21,8 @@ export class FormComponent  {
       select_contact: false,
     };
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-  nipPattern = "^[0-9]{9}$"; 
+  nipPattern = "^[0-9]{9}$";
+  
   
   checkedAll() {
     this.field_data.select_rodo = true;
